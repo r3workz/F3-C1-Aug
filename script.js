@@ -9,10 +9,19 @@ const movieResultsContainer = document.getElementById(
 );
 const loader = document.getElementById("loader");
 
-function getMovie() {
-  const apiKey = apiKeyInput.value.trim();
-  const movieTitle = movieTitleInput.value.trim();
+// Add event listeners
+window.addEventListener("DOMContentLoaded", () =>
+  searchMovie("ac66aa91", "movie")
+);
+movieTitleInput.addEventListener("input", () =>
+  searchMovie(apiKeyInput.value.trim(), movieTitleInput.value.trim())
+);
+searchBtn.addEventListener("click", () =>
+  searchMovie(apiKeyInput.value.trim(), movieTitleInput.value.trim())
+);
 
+// Search for movie function
+function searchMovie(apiKey, movieTitle) {
   // Check if both fields are not empty
   if (apiKey !== "" && movieTitle !== "") {
     // Show the loader
@@ -79,7 +88,3 @@ function getMovie() {
     movieResultsContainer.innerHTML = "";
   }
 }
-
-// Add event listeners
-movieTitleInput.addEventListener("input", () => getMovie());
-searchBtn.addEventListener("click", () => getMovie());
