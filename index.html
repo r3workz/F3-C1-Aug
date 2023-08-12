@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OMDB Movie Search Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>IMDB Movie App</h1>
+    </header>
+    <main>
+        <div class="search-container">
+            <label for="api-key-input">API Key:</label>
+            <input type="text" id="api-key-input" />
+            <label for="movie-title-input">Movie Title:</label>
+            <input type="text" id="movie-title-input" />
+            <button id="search-button">Search</button>
+        </div>
+        <div id="loader"></div>
+        <div id="movie-results-container"></div>
+    </main>
+
+</body>
+
+</html>
